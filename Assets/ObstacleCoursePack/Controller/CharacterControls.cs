@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent (typeof (Rigidbody))]
 [RequireComponent (typeof (CapsuleCollider))]
@@ -17,6 +18,7 @@ public class CharacterControls : MonoBehaviour {
 	public GameObject cam;
 	private Rigidbody rb;
 
+
 	private float distToGround;
 
 	private bool canMove = true; //If player is not hitted
@@ -28,11 +30,60 @@ public class CharacterControls : MonoBehaviour {
 	public Vector3 checkPoint;
 	private bool slide = false;
 
-	void  Start (){
+	public float time_start;
+	public float time_current;
+	public string TIME;
+	public UnityEngine.UI.Text text_Timer;
+	private float time_Max = 180000f;
+	private bool isEnded;
+	public Text NowTime;
+	public int SCORE;
+
+	void Start (){
 		// get the distance to ground
 		distToGround = GetComponent<Collider>().bounds.extents.y;
+		NowTime.text = "0";
 	}
-	
+	public string returnTime()
+    {
+		return TIME;
+    }
+	public void Check_Timer()
+    {
+		time_current = Time.time - time_start;
+		if (time_current < time_Max)
+		{
+			TIME = $"{time_current:N2}";
+			NowTime.text = $"{time_current:N2}";
+			Debug.Log(time_current);
+		}
+		else if (!isEnded)
+		{
+			End_Timer();
+		}
+	}
+	public void End_Timer()
+	{
+		Debug.Log("End");
+		time_current = time_Max;
+		text_Timer.text = $"{time_current:N2}";
+		isEnded = true;
+	}
+
+
+	public void Reset_Timer()
+	{
+		time_start = Time.time;
+		time_current = 0;
+		text_Timer.text = $"{time_current:N2}";
+		isEnded = false;
+		Debug.Log("Start");
+	}
+
+
+
+
+
 	bool IsGrounded (){
 		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
 	}
@@ -124,6 +175,7 @@ public class CharacterControls : MonoBehaviour {
 
 	private void Update()
 	{
+		Check_Timer();
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 

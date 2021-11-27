@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1F4EA1D7-3A68-FA10-3487-E1A223D766E1}</ProjectGuid>
+    <ProjectGuid>{92DE4C16-934B-7D13-91BC-63EDD22E655D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,18 +53,35 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Package\Scripts\Methods\RaycastHitX.cs" />
+    <Compile Include="Assets\Package\Scripts\PlayerMovementControllersUI.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Controller\CharacterControls.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\WallMovable.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\MovableObs.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Controller\CameraManager.cs" />
+    <Compile Include="Assets\Package\Scripts\Methods\Vector3X.cs" />
+    <Compile Include="Assets\ObstacleCoursePack\Scripts\Score_Manager.cs" />
+    <Compile Include="Assets\Package\Weapons\Scripts\Weapon.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\FallPlat.cs" />
+    <Compile Include="Assets\Package\Weapons\Scripts\GunWeapon.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\SavePos.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\Pendulum.cs" />
+    <Compile Include="Assets\Package\Weapons\Scripts\SwordWeapon.cs" />
+    <Compile Include="Assets\Package\Scripts\AudioManager\AudioData.cs" />
+    <Compile Include="Assets\Package\Scripts\Character.cs" />
+    <Compile Include="Assets\Package\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\Rotator.cs" />
+    <Compile Include="Assets\Package\Scripts\AudioManager\AudioManager.cs" />
+    <Compile Include="Assets\Package\Scripts\AudioManager\AudioManagerData.cs" />
+    <Compile Include="Assets\Package\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\KillZone.cs" />
+    <Compile Include="Assets\Animation\RunController.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\Bounce.cs" />
+    <Compile Include="Assets\Package\Weapons\Scripts\Bullet.cs" />
     <Compile Include="Assets\ObstacleCoursePack\Scripts\FPSDisplay.cs" />
-    <Compile Include="Assets\ObstacleCoursePack\Scripts\Score_Manager.cs" />
+    <Compile Include="Assets\RunningTime.cs" />
+    <Compile Include="Assets\Timer.cs" />
+    <Compile Include="Assets\Score.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
