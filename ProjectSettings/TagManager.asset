@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - Slide
+  - FinishLine
+  - obstacle
+  - obstacle1
+  - obstacle2
+  - obstacle3
+  - obstacle4
+  - obstacle5
+  - obstacle6
   layers:
   - Default
   - TransparentFX
